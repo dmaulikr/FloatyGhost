@@ -10,7 +10,8 @@
 #import "Bird.h"
 
 #define kObstacleWidth          55.
-#define kObstacleVertSpace      106.
+//#define kObstacleVertSpace      106.
+#define kObstacleVertSpace		150.
 #define kObstacleHorizSpace     170.
 #define kMaxHeight              456.    // for base of top obstacle
 #define kMinHeight              250.
@@ -19,6 +20,7 @@
 @interface MyScene ()
 @property (nonatomic, assign) BOOL              gameStarted;
 @property (nonatomic, strong) Bird              *bird;
+@property (nonatomic) UIImage					*characterImage;
 @property (nonatomic, strong) NSMutableArray    *obstacles;
 @property (nonatomic, assign) BOOL              isGameOver;
 @property (nonatomic, assign) CGFloat         currentDistanceBetweenObstacles;
@@ -32,14 +34,19 @@
         self.isGameOver  = NO;
         self.currentDistanceBetweenObstacles = 0;
         
-        self.backgroundColor = [SKColor blackColor];
+//        self.backgroundColor = [SKColor grayColor];
+		self.backgroundColor = [UIColor colorWithRed:25./255. green:34./255. blue:50./255. alpha:1.];
+	
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-        
-        self.bird = [Bird spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(30, 25)];
+		
+		self.bird = [Bird spriteNodeWithImageNamed:@"ghostCharacter"];
+		self.bird.size = CGSizeMake(30, 25);
+
+//        self.bird = [Bird spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(30, 25)];
         self.bird.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.bird.size.width/2];
         self.bird.physicsBody.dynamic = NO;
         self.bird.physicsBody.density = 1.5;
-        self.bird.physicsBody.linearDamping = 1.;
+        self.bird.physicsBody.linearDamping = .6;
         self.bird.position = CGPointMake(160, 300);
         [self addChild:self.bird];
        
@@ -52,12 +59,13 @@
 
 - (void)addNewObstacle
 {
-    SKSpriteNode *obstacleTop = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(kObstacleWidth, 568.)];
+	UIColor *obstacleColor = [UIColor darkGrayColor];
+    SKSpriteNode *obstacleTop = [SKSpriteNode spriteNodeWithColor:obstacleColor size:CGSizeMake(kObstacleWidth, 568.)];
     obstacleTop.anchorPoint = CGPointMake(0, 0);
     CGPoint topObstacleBasePoint = CGPointMake(320. + kObstacleWidth, [self randomValueBetween:kMinHeight andValue:kMaxHeight]);
     obstacleTop.position = topObstacleBasePoint;
     
-    SKSpriteNode *obstacleBottom = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(kObstacleWidth, 568.)];
+    SKSpriteNode *obstacleBottom = [SKSpriteNode spriteNodeWithColor:obstacleColor size:CGSizeMake(kObstacleWidth, 568.)];
     obstacleBottom.anchorPoint = CGPointMake(0, 1);
     obstacleBottom.position = CGPointMake(obstacleTop.position.x, obstacleTop.position.y - kObstacleVertSpace);
     
