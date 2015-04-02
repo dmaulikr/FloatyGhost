@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F9CDD931ACE078900A9E399 /* MoonScene.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CDD921ACE078900A9E399 /* MoonScene.jpg */; };
+		0FA63B181AC4CB43001348D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278442E218A9D0D700920697 /* Images.xcassets */; };
 		278442C418A9D0D700920697 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278442C318A9D0D700920697 /* Foundation.framework */; };
 		278442C618A9D0D700920697 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278442C518A9D0D700920697 /* CoreGraphics.framework */; };
 		278442C818A9D0D700920697 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278442C718A9D0D700920697 /* UIKit.framework */; };
@@ -18,7 +20,6 @@
 		278442DC18A9D0D700920697 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278442DB18A9D0D700920697 /* ViewController.m */; };
 		278442DF18A9D0D700920697 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 278442DE18A9D0D700920697 /* MyScene.m */; };
 		278442E118A9D0D700920697 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 278442E018A9D0D700920697 /* Spaceship.png */; };
-		278442E318A9D0D700920697 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278442E218A9D0D700920697 /* Images.xcassets */; };
 		278442EA18A9D0D700920697 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278442E918A9D0D700920697 /* XCTest.framework */; };
 		278442EB18A9D0D700920697 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278442C318A9D0D700920697 /* Foundation.framework */; };
 		278442EC18A9D0D700920697 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278442C718A9D0D700920697 /* UIKit.framework */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F9CDD921ACE078900A9E399 /* MoonScene.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MoonScene.jpg; sourceTree = "<group>"; };
 		278442C018A9D0D700920697 /* FlappyBird Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlappyBird Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		278442C318A9D0D700920697 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		278442C518A9D0D700920697 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,6 +135,7 @@
 				278442DE18A9D0D700920697 /* MyScene.m */,
 				278442E018A9D0D700920697 /* Spaceship.png */,
 				278442E218A9D0D700920697 /* Images.xcassets */,
+				0F9CDD921ACE078900A9E399 /* MoonScene.jpg */,
 				278442CC18A9D0D700920697 /* Supporting Files */,
 				278442FF18A9D33C00920697 /* Bird.h */,
 				2784430018A9D33C00920697 /* Bird.m */,
@@ -213,7 +216,7 @@
 		278442B818A9D0D700920697 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Sam Keene";
 				TargetAttributes = {
 					278442E718A9D0D700920697 = {
@@ -246,7 +249,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				278442D018A9D0D700920697 /* InfoPlist.strings in Resources */,
-				278442E318A9D0D700920697 /* Images.xcassets in Resources */,
+				0F9CDD931ACE078900A9E399 /* MoonScene.jpg in Resources */,
+				0FA63B181AC4CB43001348D5 /* Images.xcassets in Resources */,
 				278442E118A9D0D700920697 /* Spaceship.png in Resources */,
 				278442D918A9D0D700920697 /* Main.storyboard in Resources */,
 			);
@@ -325,7 +329,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -364,7 +367,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -424,7 +426,6 @@
 		278442FD18A9D0D700920697 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlappyBird Tutorial.app/FlappyBird Tutorial";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -447,7 +448,6 @@
 		278442FE18A9D0D700920697 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FlappyBird Tutorial.app/FlappyBird Tutorial";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

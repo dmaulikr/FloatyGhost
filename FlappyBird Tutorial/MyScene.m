@@ -24,18 +24,23 @@
 @property (nonatomic, strong) NSMutableArray    *obstacles;
 @property (nonatomic, assign) BOOL              isGameOver;
 @property (nonatomic, assign) CGFloat         currentDistanceBetweenObstacles;
+
 @end
 
 @implementation MyScene
--(id)initWithSize:(CGSize)size {    
+- (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
         self.gameStarted = NO;
         self.isGameOver  = NO;
         self.currentDistanceBetweenObstacles = 0;
-        
-//        self.backgroundColor = [SKColor grayColor];
-		self.backgroundColor = [UIColor colorWithRed:25./255. green:34./255. blue:50./255. alpha:1.];
+
+		self.backgroundColor = [UIColor clearColor];
+
+		SKSpriteNode *backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:@"MoonScene.jpg"];
+		backgroundNode.position = CGPointMake(self.size.width/2, self.size.height/2);
+		
+		[self addChild:backgroundNode];
 	
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
 		
@@ -53,14 +58,19 @@
         self.obstacles = [NSMutableArray array];
         
         [self addNewObstacle];
+		
     }
     return self;
 }
 
 - (void)addNewObstacle
 {
+	SKTexture *obstacleTexture = [SKTexture textureWithImageNamed:@"TallMetalTex"];
+	
 	UIColor *obstacleColor = [UIColor darkGrayColor];
     SKSpriteNode *obstacleTop = [SKSpriteNode spriteNodeWithColor:obstacleColor size:CGSizeMake(kObstacleWidth, 568.)];
+	[obstacleTop setTexture:obstacleTexture];
+	
     obstacleTop.anchorPoint = CGPointMake(0, 0);
     CGPoint topObstacleBasePoint = CGPointMake(320. + kObstacleWidth, [self randomValueBetween:kMinHeight andValue:kMaxHeight]);
     obstacleTop.position = topObstacleBasePoint;
@@ -68,6 +78,7 @@
     SKSpriteNode *obstacleBottom = [SKSpriteNode spriteNodeWithColor:obstacleColor size:CGSizeMake(kObstacleWidth, 568.)];
     obstacleBottom.anchorPoint = CGPointMake(0, 1);
     obstacleBottom.position = CGPointMake(obstacleTop.position.x, obstacleTop.position.y - kObstacleVertSpace);
+	[obstacleBottom setTexture:obstacleTexture];
     
     [self addChild:obstacleTop];
     [self addChild:obstacleBottom];
@@ -76,8 +87,7 @@
     [self.obstacles addObject:obstacleBottom];
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     for (UITouch *touch in touches) {
         if (!self.gameStarted) {
             self.gameStarted = YES;
