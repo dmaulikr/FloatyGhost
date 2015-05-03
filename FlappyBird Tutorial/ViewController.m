@@ -18,10 +18,11 @@
     // Configure the view.
     _gameView.showsFPS = NO;
     _gameView.showsNodeCount = NO;
-    
+	
     // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:_gameView.bounds.size];
+    MyScene *scene = [MyScene sceneWithSize:_gameView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
+	scene.gameDelegate = self;
     
     // Present the scene.
     [_gameView presentScene:scene];
@@ -45,6 +46,11 @@
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+
+// MyScene Protocol
+- (void)updateCount:(NSUInteger)count {
+	self.scoreLabel.text = [NSString stringWithFormat:@"Score: %lu", count];
 }
 
 @end

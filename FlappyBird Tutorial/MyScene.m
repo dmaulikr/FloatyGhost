@@ -25,14 +25,17 @@
 @property (nonatomic, strong) NSMutableArray    *obstacles;
 @property (nonatomic, assign) BOOL              isGameOver;
 @property (nonatomic, assign) CGFloat         currentDistanceBetweenObstacles;
+@property (nonatomic, strong) CZ_GameUserData *userData;
 @end
 
 @implementation MyScene
+@synthesize userData;
 
 -(id)initWithSize:(CGSize)size {    
 
     if (self = [super initWithSize:size]) {
-        
+		self.userData = [[CZ_GameUserData alloc] init];
+		
         self.gameStarted = NO;
         self.isGameOver  = NO;
         self.currentDistanceBetweenObstacles = 0;
@@ -109,6 +112,7 @@
         if (self.currentDistanceBetweenObstacles >= kObstacleHorizSpace) {
             self.currentDistanceBetweenObstacles = 0;
             [self addNewObstacle];
+			[self.gameDelegate updateCount:[self.userData increaseScore:1]];
         }
         
         for (SKSpriteNode *obstacle in self.obstacles) {
@@ -135,6 +139,7 @@
 
 - (void)restart
 {
+	self.userData.score = 0;
     for (SKSpriteNode *obstacle in self.obstacles) {
         [obstacle removeFromParent];
     }
@@ -148,6 +153,9 @@
     self.currentDistanceBetweenObstacles = 0;
     
     [self addNewObstacle];
+	
+	self.userData.score = 0;
+	[self.gameDelegate updateCount:self.userData.score];
     
 }
 

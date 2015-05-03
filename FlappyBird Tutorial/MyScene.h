@@ -8,6 +8,14 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+@protocol FlappyGame <NSObject>
+
+- (void)updateCount:(NSUInteger)count;
+
+@end
+
 @interface MyScene : SKScene
+
+@property (nonatomic)NSObject <FlappyGame> *gameDelegate;
 
 @end

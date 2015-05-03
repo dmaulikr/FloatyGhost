@@ -12,8 +12,19 @@
 
 @synthesize score;
 
+- (NSUInteger)score {
+	NSLog(@"scrore: %lu", score);
+	return score;
+}
+
+- (NSUInteger)increaseScore:(NSUInteger)amount {
+	self.score += amount;
+	return self.score;
+}
+
 - (CZ_GameUserData *)init {
 	self = [super init];
+	score = 0;
 	return self;
 }
 
