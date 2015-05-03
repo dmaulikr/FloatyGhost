@@ -43,6 +43,7 @@
                                 <color key="textColor" red="0.92167884867275196" green="0.92426758471731341" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.90309774509999996" green="0.69137651229999997" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5W-UO-pqm">
                                 <rect key="frame" x="16" y="320" width="288" height="30"/>
