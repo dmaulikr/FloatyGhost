@@ -25,25 +25,9 @@
 @property (nonatomic, strong) NSMutableArray    *obstacles;
 @property (nonatomic, assign) BOOL              isGameOver;
 @property (nonatomic, assign) CGFloat         currentDistanceBetweenObstacles;
-@property (nonatomic, assign)CGFloat viewWidth;
-@property (nonatomic, assign)CGFloat viewHeight;
 @end
 
 @implementation MyScene
-
-- (CGFloat)viewHeight {
-	if (!_viewHeight) {
-		_viewHeight = self.view.bounds.size.height;
-	}
-	return _viewHeight;
-}
-
-- (CGFloat)viewWidth {
-	if (!_viewWidth) {
-		_viewWidth = self.view.bounds.size.width;
-	}
-	return _viewWidth;
-}
 
 -(id)initWithSize:(CGSize)size {    
 
@@ -69,7 +53,7 @@
         self.bird.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.bird.size.width/2];
         self.bird.physicsBody.dynamic = NO;
         self.bird.physicsBody.density = 1.5;
-        self.bird.physicsBody.linearDamping = .6;
+		self.bird.physicsBody.linearDamping = .6;
         self.bird.position = CGPointMake(160, 300);
         [self addChild:self.bird];
        
