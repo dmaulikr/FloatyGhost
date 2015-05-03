@@ -7,7 +7,7 @@
 //
 
 #import "Bird.h"
-static const CGFloat bounceImpulse = 20.5;
+static const CGFloat bounceImpulse = 22.0;
 
 @implementation Bird
 
