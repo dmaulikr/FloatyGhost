@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FEB69831AF67DD900FE5173 /* CZ_GameUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB69821AF67DD900FE5173 /* CZ_GameUserData.m */; };
+		0FEB69841AF67DD900FE5173 /* CZ_GameUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEB69821AF67DD900FE5173 /* CZ_GameUserData.m */; };
 		278442C418A9D0D700920697 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278442C318A9D0D700920697 /* Foundation.framework */; };
 		278442C618A9D0D700920697 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278442C518A9D0D700920697 /* CoreGraphics.framework */; };
 		278442C818A9D0D700920697 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278442C718A9D0D700920697 /* UIKit.framework */; };
@@ -17,7 +19,6 @@
 		278442D918A9D0D700920697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278442D718A9D0D700920697 /* Main.storyboard */; };
 		278442DC18A9D0D700920697 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278442DB18A9D0D700920697 /* ViewController.m */; };
 		278442DF18A9D0D700920697 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 278442DE18A9D0D700920697 /* MyScene.m */; };
-		278442E118A9D0D700920697 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 278442E018A9D0D700920697 /* Spaceship.png */; };
 		278442E318A9D0D700920697 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278442E218A9D0D700920697 /* Images.xcassets */; };
 		278442EA18A9D0D700920697 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278442E918A9D0D700920697 /* XCTest.framework */; };
 		278442EB18A9D0D700920697 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278442C318A9D0D700920697 /* Foundation.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FEB69811AF67DD900FE5173 /* CZ_GameUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZ_GameUserData.h; sourceTree = "<group>"; };
+		0FEB69821AF67DD900FE5173 /* CZ_GameUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZ_GameUserData.m; sourceTree = "<group>"; };
 		278442C018A9D0D700920697 /* FlappyBird Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlappyBird Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		278442C318A9D0D700920697 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		278442C518A9D0D700920697 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,7 +57,6 @@
 		278442DB18A9D0D700920697 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		278442DD18A9D0D700920697 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		278442DE18A9D0D700920697 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		278442E018A9D0D700920697 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		278442E218A9D0D700920697 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		278442E818A9D0D700920697 /* FlappyBird TutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FlappyBird TutorialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		278442E918A9D0D700920697 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -90,6 +92,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FEB69851AF67DE400FE5173 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				278442FF18A9D33C00920697 /* Bird.h */,
+				2784430018A9D33C00920697 /* Bird.m */,
+				0FEB69811AF67DD900FE5173 /* CZ_GameUserData.h */,
+				0FEB69821AF67DD900FE5173 /* CZ_GameUserData.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0FEB69861AF67DF700FE5173 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				278442D418A9D0D700920697 /* AppDelegate.h */,
+				278442D518A9D0D700920697 /* AppDelegate.m */,
+				278442DA18A9D0D700920697 /* ViewController.h */,
+				278442DB18A9D0D700920697 /* ViewController.m */,
+				278442DD18A9D0D700920697 /* MyScene.h */,
+				278442DE18A9D0D700920697 /* MyScene.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0FEB69871AF67E1200FE5173 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				278442D718A9D0D700920697 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		278442B718A9D0D700920697 = {
 			isa = PBXGroup;
 			children = (
@@ -124,18 +158,11 @@
 		278442CB18A9D0D700920697 /* FlappyBird Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				278442D418A9D0D700920697 /* AppDelegate.h */,
-				278442D518A9D0D700920697 /* AppDelegate.m */,
-				278442D718A9D0D700920697 /* Main.storyboard */,
-				278442DA18A9D0D700920697 /* ViewController.h */,
-				278442DB18A9D0D700920697 /* ViewController.m */,
-				278442DD18A9D0D700920697 /* MyScene.h */,
-				278442DE18A9D0D700920697 /* MyScene.m */,
-				278442E018A9D0D700920697 /* Spaceship.png */,
+				0FEB69861AF67DF700FE5173 /* Controller */,
+				0FEB69871AF67E1200FE5173 /* View */,
+				0FEB69851AF67DE400FE5173 /* Model */,
 				278442E218A9D0D700920697 /* Images.xcassets */,
 				278442CC18A9D0D700920697 /* Supporting Files */,
-				278442FF18A9D33C00920697 /* Bird.h */,
-				2784430018A9D33C00920697 /* Bird.m */,
 			);
 			path = "FlappyBird Tutorial";
 			sourceTree = "<group>";
@@ -247,7 +274,6 @@
 			files = (
 				278442D018A9D0D700920697 /* InfoPlist.strings in Resources */,
 				278442E318A9D0D700920697 /* Images.xcassets in Resources */,
-				278442E118A9D0D700920697 /* Spaceship.png in Resources */,
 				278442D918A9D0D700920697 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +296,7 @@
 				2784430118A9D33C00920697 /* Bird.m in Sources */,
 				278442DF18A9D0D700920697 /* MyScene.m in Sources */,
 				278442DC18A9D0D700920697 /* ViewController.m in Sources */,
+				0FEB69831AF67DD900FE5173 /* CZ_GameUserData.m in Sources */,
 				278442D618A9D0D700920697 /* AppDelegate.m in Sources */,
 				278442D218A9D0D700920697 /* main.m in Sources */,
 			);
@@ -280,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				278442F618A9D0D700920697 /* FlappyBird_TutorialTests.m in Sources */,
+				0FEB69841AF67DD900FE5173 /* CZ_GameUserData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
