@@ -38,7 +38,7 @@
 		self.backgroundColor = [UIColor clearColor];
 
 		SKSpriteNode *backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:@"MoonScene.jpg"];
-		backgroundNode.position = CGPointMake(self.size.width/2, self.size.height/2);
+		backgroundNode.position = CGPointMake(-150., self.size.height/2);
 		
 		[self addChild:backgroundNode];
 	

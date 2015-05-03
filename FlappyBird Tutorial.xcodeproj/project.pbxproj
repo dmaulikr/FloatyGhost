@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		0F9CDD921ACE078900A9E399 /* MoonScene.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MoonScene.jpg; sourceTree = "<group>"; };
-		278442C018A9D0D700920697 /* FlappyBird Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlappyBird Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		278442C018A9D0D700920697 /* Floaty Ghost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Floaty Ghost.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		278442C318A9D0D700920697 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		278442C518A9D0D700920697 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		278442C718A9D0D700920697 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -105,7 +105,7 @@
 		278442C118A9D0D700920697 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				278442C018A9D0D700920697 /* FlappyBird Tutorial.app */,
+				278442C018A9D0D700920697 /* Floaty Ghost.app */,
 				278442E818A9D0D700920697 /* FlappyBird TutorialTests.xctest */,
 			);
 			name = Products;
@@ -175,9 +175,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		278442BF18A9D0D700920697 /* FlappyBird Tutorial */ = {
+		278442BF18A9D0D700920697 /* Floaty Ghost */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 278442F918A9D0D700920697 /* Build configuration list for PBXNativeTarget "FlappyBird Tutorial" */;
+			buildConfigurationList = 278442F918A9D0D700920697 /* Build configuration list for PBXNativeTarget "Floaty Ghost" */;
 			buildPhases = (
 				278442BC18A9D0D700920697 /* Sources */,
 				278442BD18A9D0D700920697 /* Frameworks */,
@@ -187,9 +187,9 @@
 			);
 			dependencies = (
 			);
-			name = "FlappyBird Tutorial";
+			name = "Floaty Ghost";
 			productName = "FlappyBird Tutorial";
-			productReference = 278442C018A9D0D700920697 /* FlappyBird Tutorial.app */;
+			productReference = 278442C018A9D0D700920697 /* Floaty Ghost.app */;
 			productType = "com.apple.product-type.application";
 		};
 		278442E718A9D0D700920697 /* FlappyBird TutorialTests */ = {
@@ -219,6 +219,9 @@
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Sam Keene";
 				TargetAttributes = {
+					278442BF18A9D0D700920697 = {
+						DevelopmentTeam = UB37VMGP6E;
+					};
 					278442E718A9D0D700920697 = {
 						TestTargetID = 278442BF18A9D0D700920697;
 					};
@@ -237,7 +240,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				278442BF18A9D0D700920697 /* FlappyBird Tutorial */,
+				278442BF18A9D0D700920697 /* Floaty Ghost */,
 				278442E718A9D0D700920697 /* FlappyBird TutorialTests */,
 			);
 		};
@@ -292,7 +295,7 @@
 /* Begin PBXTargetDependency section */
 		278442EE18A9D0D700920697 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 278442BF18A9D0D700920697 /* FlappyBird Tutorial */;
+			target = 278442BF18A9D0D700920697 /* Floaty Ghost */;
 			targetProxy = 278442ED18A9D0D700920697 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -400,6 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlappyBird Tutorial/FlappyBird Tutorial-Prefix.pch";
 				INFOPLIST_FILE = "FlappyBird Tutorial/FlappyBird Tutorial-Info.plist";
@@ -414,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlappyBird Tutorial/FlappyBird Tutorial-Prefix.pch";
 				INFOPLIST_FILE = "FlappyBird Tutorial/FlappyBird Tutorial-Info.plist";
@@ -475,7 +480,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		278442F918A9D0D700920697 /* Build configuration list for PBXNativeTarget "FlappyBird Tutorial" */ = {
+		278442F918A9D0D700920697 /* Build configuration list for PBXNativeTarget "Floaty Ghost" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				278442FA18A9D0D700920697 /* Debug */,
