@@ -11,5 +11,6 @@
 @interface CZ_GameUserData : NSObject
 
 @property (nonatomic) NSInteger *score;
+- (CZ_GameUserData *)init;
 
 @end

@@ -62,20 +62,15 @@
 	
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
 		
-		self.bird = [Bird spriteNodeWithImageNamed:@"ghostCharacter"];
+		self.bird = [Bird spriteNodeWithImageNamed:@"GhostCharacter"];
 		self.bird.size = CGSizeMake(30, 25);
 
 //        self.bird = [Bird spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(30, 25)];
         self.bird.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.bird.size.width/2];
         self.bird.physicsBody.dynamic = NO;
         self.bird.physicsBody.density = 1.5;
-<<<<<<< HEAD
-        self.bird.physicsBody.linearDamping = 1.;
-        self.bird.position = CGPointMake(_viewWidth, _viewHeight);
-=======
         self.bird.physicsBody.linearDamping = .6;
         self.bird.position = CGPointMake(160, 300);
->>>>>>> master
         [self addChild:self.bird];
        
         self.obstacles = [NSMutableArray array];

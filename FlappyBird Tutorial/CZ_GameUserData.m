@@ -10,4 +10,11 @@
 
 @implementation CZ_GameUserData
 
+@synthesize score;
+
+- (CZ_GameUserData *)init {
+	self = [super init];
+	return self;
+}
+
 @end
