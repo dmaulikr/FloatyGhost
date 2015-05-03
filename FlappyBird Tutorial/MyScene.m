@@ -90,7 +90,7 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (UITouch *touch in touches) {
+	for (NSUInteger ii = 0; ii < touches.count; ii++) {
         if (!self.gameStarted) {
             self.gameStarted = YES;
             self.bird.physicsBody.dynamic = YES;
