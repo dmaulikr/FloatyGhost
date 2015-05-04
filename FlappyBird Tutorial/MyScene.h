@@ -11,6 +11,8 @@
 @protocol FlappyGame <NSObject>
 
 - (void)updateCount:(NSUInteger)count;
+- (void)startGame;
+- (void)endGame:(NSString *)displayText;
 
 @end
 

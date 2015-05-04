@@ -105,6 +105,7 @@
 -(void)update:(CFTimeInterval)currentTime
 {
     if (!self.isGameOver && self.gameStarted) {
+		[self.gameDelegate startGame];
         
         NSMutableArray *objectsToRemove = [NSMutableArray array];
         self.currentDistanceBetweenObstacles += kSpeed;
@@ -139,7 +140,6 @@
 
 - (void)restart
 {
-	self.userData.score = 0;
     for (SKSpriteNode *obstacle in self.obstacles) {
         [obstacle removeFromParent];
     }
@@ -153,6 +153,8 @@
     self.currentDistanceBetweenObstacles = 0;
     
     [self addNewObstacle];
+	
+	[self.gameDelegate endGame:[NSString stringWithFormat:@"Game Over\nScore: %lu", self.userData.score].uppercaseString];
 	
 	self.userData.score = 0;
 	[self.gameDelegate updateCount:self.userData.score];

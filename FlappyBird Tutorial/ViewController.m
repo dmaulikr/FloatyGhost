@@ -53,4 +53,22 @@
 	self.scoreLabel.text = [NSString stringWithFormat:@"Score: %lu", count];
 }
 
+- (void)startGame {
+	self.modalShader.hidden = YES;
+	self.endGameLabel.hidden = YES;
+	self.endGameButton.hidden = YES;
+	self.scoreLabel.hidden = NO;
+}
+
+- (void)endGame:(NSString *)displayText {
+	self.modalShader.hidden = NO;
+	self.endGameButton.hidden = NO;
+	self.endGameLabel.text = displayText;
+	self.endGameLabel.hidden = NO;
+	self.scoreLabel.hidden = YES;
+}
+
+- (IBAction)endGameButtonPressed:(UIButton *)sender {
+	[self startGame];
+}
 @end
