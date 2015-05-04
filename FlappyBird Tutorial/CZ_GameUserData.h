@@ -11,6 +11,7 @@
 @interface CZ_GameUserData : NSObject
 
 @property (nonatomic) NSUInteger score;
+@property (nonatomic) NSUInteger topScore;
 - (NSUInteger)increaseScore:(NSUInteger)amount;
 - (CZ_GameUserData *)init;
 
