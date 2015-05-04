@@ -58,12 +58,15 @@
 	self.endGameLabel.hidden = YES;
 	self.endGameButton.hidden = YES;
 	self.scoreLabel.hidden = NO;
+	self.endGameSupplementalLabel.hidden = YES;
 }
 
-- (void)endGame:(NSString *)displayText {
+- (void)endGameWithText:(NSString *)displayText andText:(NSString *)supplementalText {
 	self.modalShader.hidden = NO;
 	self.endGameButton.hidden = NO;
 	self.endGameLabel.text = displayText;
+	self.endGameSupplementalLabel.text = supplementalText;
+	self.endGameSupplementalLabel.hidden = NO;
 	self.endGameLabel.hidden = NO;
 	self.scoreLabel.hidden = YES;
 }

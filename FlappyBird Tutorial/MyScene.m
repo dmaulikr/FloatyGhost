@@ -154,7 +154,9 @@
     
     [self addNewObstacle];
 	
-	[self.gameDelegate endGame:[NSString stringWithFormat:@"Game Over\nScore: %lu", self.userData.score].uppercaseString];
+	[self.gameDelegate endGameWithText:[NSString stringWithFormat:@"Game Over\nScore: %lu", self.userData.score].uppercaseString
+							   andText:[NSString stringWithFormat:@"Top Score: %lu", self.userData.topScore].uppercaseString
+	];
 	
 	self.userData.score = 0;
 	[self.gameDelegate updateCount:self.userData.score];

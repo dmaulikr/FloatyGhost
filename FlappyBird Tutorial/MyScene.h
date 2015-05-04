@@ -12,7 +12,8 @@
 
 - (void)updateCount:(NSUInteger)count;
 - (void)startGame;
-- (void)endGame:(NSString *)displayText;
+- (void)endGameWithText:(NSString *)displayText
+				andText:(NSString *)supplementalText;
 
 @end
 

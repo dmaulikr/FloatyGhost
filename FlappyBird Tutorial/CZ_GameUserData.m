@@ -44,20 +44,12 @@
 	_topScore = topScore;
 	[_userDefaults setObject:[NSNumber numberWithUnsignedInteger:topScore]
 					  forKey:@"topScore"];
-	NSLog(@"Top Score: %lu", topScore);
 }
 
 - (void)setScore:(NSUInteger)score {
 	_score = score;
-	[_userDefaults setObject:[NSNumber numberWithUnsignedInteger:_score]
-					  forKey:@"score"];
 	self.topScore = [self compareUInt:_topScore
 						   toUInt:score];
-}
-
-- (NSUInteger)score {
-	NSLog(@"scrore: %lu", _score);
-	return _score;
 }
 
 - (NSUInteger)increaseScore:(NSUInteger)amount {
@@ -69,8 +61,8 @@
 	self = [super init];
 	_userDefaults = [NSUserDefaults standardUserDefaults];
 
-	NSNumber *savedScore = (NSNumber *)[_userDefaults valueForKey:@"score"];
-	_score = savedScore.unsignedIntegerValue;
+	NSNumber *savedScore = (NSNumber *)[_userDefaults valueForKey:@"topScore"];
+	self.topScore = savedScore.unsignedIntegerValue;
 	
 	return self;
 }
