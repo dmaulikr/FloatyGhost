@@ -24,7 +24,8 @@
 @property (nonatomic) UIImage					*characterImage;
 @property (nonatomic, strong) NSMutableArray    *obstacles;
 @property (nonatomic, assign) BOOL              isGameOver;
-@property (nonatomic, assign) CGFloat         currentDistanceBetweenObstacles;
+@property (nonatomic, assign) CGFloat			currentDistanceBetweenObstacles;
+@property (nonatomic, assign) CGFloat			scoreDistance;
 @property (nonatomic, strong) CZ_GameUserData *userData;
 @end
 
@@ -38,6 +39,7 @@
 		
         self.gameStarted = NO;
         self.isGameOver  = NO;
+		self.scoreDistance = - kObstacleWidth;
         self.currentDistanceBetweenObstacles = 0;
 
 		self.backgroundColor = [UIColor clearColor];
@@ -109,11 +111,16 @@
         
         NSMutableArray *objectsToRemove = [NSMutableArray array];
         self.currentDistanceBetweenObstacles += kSpeed;
-        
+		self.scoreDistance += kSpeed;
+		
+		if (self.scoreDistance >= kObstacleHorizSpace) {
+			self.scoreDistance = 0;
+			[self.gameDelegate updateCount:[self.userData increaseScore:1]];
+		}
+		
         if (self.currentDistanceBetweenObstacles >= kObstacleHorizSpace) {
             self.currentDistanceBetweenObstacles = 0;
             [self addNewObstacle];
-			[self.gameDelegate updateCount:[self.userData increaseScore:1]];
         }
         
         for (SKSpriteNode *obstacle in self.obstacles) {
@@ -135,7 +142,7 @@
         }
         // remove outside of the for loop
         [self.obstacles removeObjectsInArray:objectsToRemove];
-    }
+	}
 }
 
 - (void)restart
@@ -151,7 +158,8 @@
     self.gameStarted = NO;
     self.isGameOver  = NO;
     self.currentDistanceBetweenObstacles = 0;
-    
+	self.scoreDistance = - kObstacleWidth;
+
     [self addNewObstacle];
 	
 	[self.gameDelegate endGameWithText:[NSString stringWithFormat:@"Game Over\nScore: %lu", self.userData.score].uppercaseString
