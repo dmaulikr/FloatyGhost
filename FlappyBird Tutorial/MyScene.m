@@ -79,10 +79,10 @@
 	[obstacleTop setTexture:obstacleTexture];
 	
     obstacleTop.anchorPoint = CGPointMake(0, 0);
-    CGPoint topObstacleBasePoint = CGPointMake(320. + kObstacleWidth, [self randomValueBetween:kMinHeight andValue:kMaxHeight]);
+    CGPoint topObstacleBasePoint = CGPointMake(self.size.width + kObstacleWidth, [self randomValueBetween:kMinHeight andValue:kMaxHeight]);
     obstacleTop.position = topObstacleBasePoint;
     
-    SKSpriteNode *obstacleBottom = [SKSpriteNode spriteNodeWithColor:obstacleColor size:CGSizeMake(kObstacleWidth, 568.)];
+    SKSpriteNode *obstacleBottom = [SKSpriteNode spriteNodeWithColor:obstacleColor size:CGSizeMake(kObstacleWidth, self.size.height)];
     obstacleBottom.anchorPoint = CGPointMake(0, 1);
     obstacleBottom.position = CGPointMake(obstacleTop.position.x, obstacleTop.position.y - kObstacleVertSpace);
 	[obstacleBottom setTexture:obstacleTexture];
@@ -152,7 +152,7 @@
     }
    [self.obstacles removeAllObjects];
     
-    self.bird.position = CGPointMake(160, 300);
+    self.bird.position = CGPointMake(self.size.width/2, self.size.height/2);
     self.bird.physicsBody.dynamic = NO;
     
     self.gameStarted = NO;
@@ -162,8 +162,8 @@
 
     [self addNewObstacle];
 	
-	[self.gameDelegate endGameWithText:[NSString stringWithFormat:@"Game Over\nScore: %lu", self.userData.score].uppercaseString
-							   andText:[NSString stringWithFormat:@"Top Score: %lu", self.userData.topScore].uppercaseString
+	[self.gameDelegate endGameWithText:[NSString stringWithFormat:@"Game Over\nScore: %lu", (unsigned long)self.userData.score].uppercaseString
+							   andText:[NSString stringWithFormat:@"Top Score: %lu", (unsigned long)self.userData.topScore].uppercaseString
 	];
 	
 	self.userData.score = 0;

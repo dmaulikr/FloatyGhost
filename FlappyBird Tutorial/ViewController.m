@@ -50,7 +50,7 @@
 
 // MyScene Protocol
 - (void)updateCount:(NSUInteger)count {
-	self.scoreLabel.text = [NSString stringWithFormat:@"Score: %lu", count];
+	self.scoreLabel.text = [NSString stringWithFormat:@"Score: %lu", (unsigned long)count];
 }
 
 - (void)startGame {
